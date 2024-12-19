@@ -1,38 +1,72 @@
 #include "lists.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 /**
- * is_palindrome - Check if the listint is a Palindrome
- * @head: type listint_s double pointer of node
- * return: 1 if is a pilndrome 0 if not
+ * reverse_listint - reverses a linked list
+ * @head: pointer to the first node in the list
+ *
+ * Return: pointer to the first node in the new list
  */
+void reverse_listint(listint_t **head)
+{
+	listint_t *prev = NULL;
+	listint_t *current = *head;
+	listint_t *next = NULL;
 
+	while (current)
+	{
+		next = current->next;
+		current->next = prev;
+		prev = current;
+		current = next;
+	}
+
+	*head = prev;
+}
+
+/**
+ * is_palindrome - checks if a linked list is a palindrome
+ * @head: double pointer to the linked list
+ *
+ * Return: 1 if it is, 0 if not
+ */
 int is_palindrome(listint_t **head)
 {
-	if (head == NULL && *head == NULL)
-		return (1);
-	else
-		return (recu_palindrome(head, *head));
-}
+	listint_t *slow = *head, *fast = *head, *temp = *head, *dup = NULL;
 
-/**
- * recu_palindrome - Recursion to check each node as palindrome
- * @head: type listint_s double pointer of node
- * @tail: type listint_s single pointer of last node
- * return: 1 if is a pilndrome 0 if not
- */
-
-int recu_palindrome(listint_t **head, listint_t *tail)
-{
-	if (tail == NULL)
+	if (*head == NULL || (*head)->next == NULL)
 		return (1);
 
-	if (recu_palindrome(head, tail->next) && (*head)->n == tail->n)
+	while (1)
 	{
-		*head = (*head)->next;
-		return (1);
+		fast = fast->next->next;
+		if (!fast)
+		{
+			dup = slow->next;
+			break;
+		}
+		if (!fast->next)
+		{
+			dup = slow->next->next;
+			break;
+		}
+		slow = slow->next;
 	}
+
+	reverse_listint(&dup);
+
+	while (dup && temp)
+	{
+		if (temp->n == dup->n)
+		{
+			dup = dup->next;
+			temp = temp->next;
+		}
+		else
+			return (0);
+	}
+
+	if (!dup)
+		return (1);
+
 	return (0);
 }
-

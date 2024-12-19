@@ -1,55 +1,88 @@
-# 0x05. Python - Exceptions
+# Python-exceptions
 
-## oncept of the project Title
-In Python, an exception is an event that occurs during the execution of a program that disrupts the normal flow of the program's instructions. When an exceptional situation arises, an object representing the exception is created, and the normal flow of the program is interrupted to handle the exception.
+In this project, I learned handling errors and exceptions in Python with `try` and `except`.
 
-Exceptions can be raised (generated) by the Python interpreter or explicitly by the programmer. Common examples of exceptions include attempting to divide by zero, accessing an index that is out of range in a list, or trying to open a file that does not exist
+## Tests :heavy_check_mark:
 
-## Requirements
+* [tests](./tests): This directory contains all my test files for this project.
 
-### General
-- Allowed editors: vi, vim, emacs
-- All your files will be interpreted/compiled on Ubuntu 20.04 LTS using python3 (version 3.8.5)
-- All your files should end with a new line
-- The first line of all your files should be exactly `#!/usr/bin/python3`
-- A README.md file, at the root of the folder of the project, is mandatory
-- Your code should use the pycodestyle (version 2.8.*)
-- All your files must be executable
-- The length of your files will be tested using wc
+## Table of contents
+Files | Description | Prototypes
+----- | ----------- | ----------
+[0-safe_print_list.py](./0-safe_print_list.py) | Python function that prints x elements of a list |  `def safe_print_list(my_list=[], x=0):`
+[1-safe_print_integer.py](./1-safe_print_integer.py) | Python function that prints an integer with "{:d}".format() |  `def safe_print_integer(value):`
+[2-safe_print_list_integers.py](./2-safe_print_list_integers.py) | Python function that prints the first x elements of a list and only integers |  `def safe_print_list_integers(my_list=[], x=0):`
+[3-safe_print_division.py](./3-safe_print_division.py) | Python function that divides 2 integers and prints the result |  `def safe_print_division(a, b):`
+[4-list_division.py](./4-list_division.py) | Python function that divides element by element 2 lists |  `def list_division(my_list_1, my_list_2, list_length):` 
+[5-raise_exception.py](./5-raise_exception.py) | Python function that raises a type exception |  `def raise_exception():`
+[6-raise_exception_msg.py](./6-raise_exception_msg.py) | Python function that raises a name exception with a message |  `def raise_exception_msg(message=""):`
+[100-safe_print_integer_err.py](./100-safe_print_integer_err.py) | Python function that prints an integer (advanced) |  `def safe_print_integer_err(value):`
+[101-safe_function.py](./101-safe_function.py) | Python function that executes a function safely (advanced) |  `def safe_function(fct, *args):`
+[102-magic_calculation.py](./102-magic_calculation.py) | Python function found from its ByteCode (advanced) | `def magic_calculation(a, b);`
+[103-python.c](./103-python.c) | C functions that print some basic info about Python lists, Python bytes an Python float objects (advanced) |  <ul><li>`void print_python_list(PyObject *p);`</li><li>`void print_python_bytes(PyObject *p);`</li><li>`void print_python_float(PyObject *p);`</li></ul>
 
-## Tasks :heavy_check_mark:
 
-### 0. Safe list printing
-Write a function that prints `x` elements of a list.
+## Tasks :page_with_curl:
 
-### 1. Safe printing of an integer
-Write a function that prints an integer with "{:d}".format().
+* **0. Safe list printing**
+  * [0-safe_print_list.py](./0-safe_print_list.py): Python function that prints `x` elements of a list on the same line, followed by a new line.
+  * The parameter `x` represents the number of elements to print - can be
+  bigger than the length of `my_list`.
+  * Returns the real number of elements printed.
+  * Without importing modules or using `len()`.
 
-### 2. Print and count integers
-Write a function that prints the first `x` elements of a list and only integers.
+* **1. Safe printing of an integers list**
+  * [1-safe_print_integer.py](./1-safe_print_integer.py): Python function that prints an integer in `"{:d}".format()` format.
+  * The parameter `value` can be any type.
+  * Returns `True` if `value` was printed correctly (ie. was an integer), `False` otherwise.
+  * Without importing modules or using `type()`.
 
-### 3. Integers division with debug
-Write a function that divides two integers and prints the result.
+* **2. Print and count integers**
+  * [2-safe_print_list_integers.py](./2-safe_print_list_integers.py): Python function that prints the first `x` elements of a list that are integers on the same line, followed by a new line.
+  * The parameter `my_list` can contain any type.
+  * The parameter `x` represents the number of elements to print - can be bigger than the length of `my_list`.
+  * Reutnrs the real number of integers printed.
+  * Without importing modules or using `len()`.
 
-### 4. Divide a list
-Write a function that divides element by element 2 lists.
+* **3. Integers division with debug**
+  * [3-safe_print_division.py](./3-safe_print_division.py): Python function that divides two integers and prints the result using `finally:`.
+  * The function assumes that the arguments are integers.
+  * Upon success, returns the value of the division; otherwise - returns `None`.
+  * Without importing modules.
 
-### 5. Raise exception
-Write a function that raises a type exception.
+* **4. Divide a list**
+  * [4-list_division.py](./4-list_division.py): Python function that divides two lists element by element.
+  * Returns a new list of length `list_length` with all divisions.
+  * The lists `my_list_1` and `my_list_2` can contain any type.
+  * The parameter `list_length` can be larger than the lengths of either list.
+  * If an element is not an integer or float, the function prints `wrong type`.
+  * If the division cannot be done, the result of the division is `0` and the function prints: `division by 0`.
+  * If either of `my_list_1` or `my_list_2` are too short, the function prints: `out of range`.
+  * Without importing modules.
 
-### 6. Raise a message
-Write a function that raises a name exception with a message.
+* **5. Raise exception**
+  * [5-raise_exception.py](./5-raise_exception.py): Python function that raises a type exception.
+  * Without importing modules.
 
-### 7. Safe integer print with commas
-Write a function that prints an integer with commas as thousands separators.
+* **6. Raise a message**
+  * [6-raise_exception_msg.py](./6-raise_exception_msg.py): Python function that raises a name exception with a message.
+  * Without importing modules.
 
-### 8. Safe function
-Write a function that executes a function safely.
+* **7. Safe integer print with error message**
+  * [100-safe_print_integer_err.py](./100-safe_print_integer_err.py): Python function that prints an integer with type-checking in `"{:d}".format())` format.
+  * The paramter `value` can be any type.
+  * Returns `True` if `value` was printed correctly (ie. was an integer).
+  * Otherwise, prints an exception error to `stderr` and returns `False`.
+  * Without importing modules.
 
-### 9. ByteCode -> Python #4
-Write the Python function `def magic_calculation(a, b):` that does exactly the following:
+* **8. Safe function**
+  * [101-safe_function.py](./101-safe_function.py): Python function that executes a function safely.
+  * The function assumes that the parameter `fct` is always a pointer to a function.
+  * Upon success, returns the result of the function.
+  * Otherwise, prints an en exception error to `stderr` and returns `None`.
 
-### 10. CPython #2: PyFloatObject
-Write three C functions that print some basic info about Python lists, Python bytes, and Python float objects.
+* **9. ByteCode -> Python #4**
+  * [102-magic_calculation.py](./102-magic_calculation.py): Python function matching exactly a bytecode provided by ALX-Africa.
 
-**Author: Zerihun Shiferaw**
+* **10. CPython #2: PyFloatObject**
+  * [103-python.c](./103-python.c): C functions that print basic information  about Python lists, bytes, and float objects.

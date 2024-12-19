@@ -1,138 +1,89 @@
-# Javascript - Warm up
+# 0x12-javascript-warm_up
 
-This is my first JavaScript project I have done and completed at alx. Tasks involved
-writing various introduction level JavaScript scripts on Node.js.
 
-## Tests :heavy_check_mark:
-
-* [tests](./tests): Folder of test files.These files are Provided by alx to ensure effective non-errotic code.
-
-## Function Prototypes :floppy_disk:
-
-Prototypes for functions written in this project:
-
-| File        | Prototype                                  |
-| ----------- | ------------------------------------------ |
-| `13-add.js` | `exports.add = (a, b)`                     |
-| `101-call_me_moby.js` | `function (x, theFunction)`      |
-| `102-add_me_maybe.js` | `function (number, theFunction)` |
-
-## Tasks :page_with_curl:
-
-* **0. First constant, first print**
-  * [0-javascript_is_amazing.js](./0-javascript_is_amazing.js): JavaScript script
-  that creates a constant variable `myVar` with the value `'Javascript is amazing'`.
-  * Usage: `./0-javascript_is_amazing.js`
-
-* **1. 3 languages**
-  * [1-multi_languages.js](./1-multi_languages.js): JavaScript script that prints
-  three lines.
-  * Usage: `./1-multi_languages.js`
-  * Line 1: `'C is fun'`.
-  * Line 2: `'Python is cool'`.
-  * Line 3: `'Javascript is amazing'`.
-
-* **2. Arguments**
-  * [2-arguments.js](./2-arguments.js): JavaScript script that prints a message
-  depending on the number of arguments passed.
-  * Usage: `./2-arguments.js <arg 1> <arg 2> ...`
-  * If no arguments are passed, prints `'No argument'`.
-  * If one argument is passed, prints `'Argument found'`.
-  * Otherwise, prints `'Arguments found'`.
-
-* **3. Value of my argument**
-  * [3-value_argument.js](./3-value_argument.js): JavaScript script that prints
-  the first argument passed to it.
-  * Usage: `./3-value_argument.js <arg>`
-  * If no argument is passed, prints `'No argument'`.
-
-* **4. Create a sentence**
-  * [4-concat.js](./4-concat.js): JavaScript script that prints two arguments
-  passed in the format `<arg 1> is <arg 2>`.
-  * Usage: `./4-concat.js <arg1> <arg2>`
-
-* **5. An Integer**
-  * [5-to_integer.js](./5-to_integer.js): JavaScript script that prints
-  `My number: <first argument converted in integer>` if the first pased argument
-  can be converted to an integer.
-  * Usage: `./5-to_integer.js`
-  * If the argument cannot be converted to an integer, prints `'Not a number'`.
-
-* **6. Loop to languages**
-  * [6-multi_languages_loop.js](./6-multi_languages_loop.js): JavaScript script that
-  prints three lines using an array and a loop.
-  * Usage: `./6-multi_languages_loop.js`
-  * First line: `'C is fun'`.
-  * Second line: `'Python is cool'`.
-  * Third line: `'Javascript is awesome'`.
-
-* **7. I love C**
-  * [7-multi_c.js](./7-multi_c.js): JavaScript script that prints `x` times `'C is fun'`.
-  * Usage: `./7-multi_c.js <x>`
-  * If the first argument cannot be converted to a number, prints
-  `'Missing number of occurrences'`.
-
-* **8. Square**
-  * [8-square.js](./8-square.js): JavaScript script that prints a square.
-  * Usage: `./8-square.js <size>`
-  * If the first argument cannot be converted to a number, prints `'Missing size`'.
-  * Uses the `X` character to print the square.
-
-* **9. Add**
-  * [9-add.js](./9-add.js): JavaScript script that prints the addition of two
-  numbers passed as arguments.
-  * Usage: `./9-add.js <number 1> <number 2>`
-  * Prototype: `function add(a, b)`
-
-* **10. Factorial**
-  * [10-factorial.js](./10-factorial.js): JavaScript script that computes and
-  prints a factorial.
-  * Usage: `./10-factorial.js <number to compute factorial of>`
-
-* **11. Second biggest!**
-  * [11-second_biggest.js](./11-second_biggest.js): JavaScript script that
-  locates the second largest number in the list of provided arguments.
-  * Usage: `./11-second_biggest.js <arg 1> <arg 2> ...`
-  * If no arguments are passed or the number of arguments is `1`, prints `0`.
-
-* **12. Object**
-  * [12-object.js](./12-object.js): Update of the following script that replaces
-  the value `12` with `89`.
+```sql
+       __                  _____           _       __
+      / /___ __   ______ _/ ___/__________(_)___  / /_
+ __  / / __ `/ | / / __ `/\__ \/ ___/ ___/ / __ \/ __/
+/ /_/ / /_/ /| |/ / /_/ /___/ / /__/ /  / / /_/ / /_
+\____/\__,_/ |___/\__,_//____/\___/_/  /_/ .___/\__/
+                                        /_/
 ```
+
+## Description
+The aim of this project is to get started with Javascript, learn all the syntax and its different uses.
+
+## Environment
+
+<div>
+<!-- Ubuntu --> <a href="https://ubuntu.com/" target="_blank"><img height="24px" src="https://raw.githubusercontent.com/ralexrivero/xelar_theme_profile/main/icons/ubuntu-icon.svg" alt="Ubuntu"> </a> <!-- GNU Bash --> <a href="https://www.vim.org/" target="_blank"><img height="24px" src="https://raw.githubusercontent.com/ralexrivero/xelar_theme_profile/main/icons/gnu-bash-logo.svg" alt="GNU Bash"> <!-- Vim --> <a href="https://www.vim.org/" target="_blank"><img height="24px" src="https://raw.githubusercontent.com/ralexrivero/xelar_theme_profile/main/icons/Vimlogo.svg" alt="Vim text editor"> </a> <!-- JavaScript --> <a href="https://www.javascript.com/" target="_blank"><img height="24px" src="https://raw.githubusercontent.com/ralexrivero/xelar_theme_profile/main/icons/logo-javascript.svg" alt="JavaScript" > </a>
+</div>
+
+* OS: Ubuntu 14.04 LTS
+* Terminal: Bash
+* Editor: VIM 7.4.52
+* Language: JavaScript
+* Node.js
+* Style guidelines: Semistandard Code Style
+
+<div>
+<!-- semistandard --> <a href="https://github.com/standard/semistandard" target="_blank"><img height="24px" src="https://raw.githubusercontent.com/standard/semistandard/master/badge.svg" alt="Semistandard Code Style" > </a>
+</div>
+
+>Node installation:
+
+```bash
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+
+> Install semi-standard:
+
+```bash
+sudo npm install semistandard --global
+```
+
+> Shebang:
+
+```shellscript
 #!/usr/bin/node
-const myObject = {
-  type: 'object',
-  value: 12
-};
-console.log(myObject);
-/*
-YOUR CODE HERE
-*/
-console.log(myObject);
 ```
 
-* **13. Add file**
-  * [13-add.js](./13-add.js): JavaScript function `add` that returns the addition
-  of two numbers.
+## Table of contents
+Files | Description
+----- | -----------
+[0-javascript_is_amazing.js](./0-javascript_is_amazing.js) | JS script that prints “Javascript is amazing”
+[1-multi_languages.js](./1-multi_languages.js) | JS script that prints 3 lines
+[2-arguments.js](./2-arguments.js) | JS script that prints a message depending of the number of arguments passed
+[3-value_argument.js](./3-value_argument.js) | JS script that prints the first argument passed to it
+[4-concat.js](./4-concat.js) | JS script that prints two arguments passed to it, in the following format: “ is ”
+[5-to_integer.js](./5-to_integer.js) | JS script that prints My number: <first argument converted in integer> if the first argument can be converted to an integer
+[6-multi_languages_loop.js](./6-multi_languages_loop.js) | JS script that prints 3 lines: (like 1-multi_languages.js) but by using an array of string and a loop
+[7-multi_c.js](./7-multi_c.js) | JS script that prints x times “C is fun”
+[8-square.js](./8-square.js) | JS script that prints a square
+[9-add.js](./9-add.js) | JS script that prints the addition of 2 integers
+[10-factorial.js](./10-factorial.js) | JS script that computes and prints a factorial
+[11-second_biggest.js](./11-second_biggest.js) | JS script that searches the second biggest integer in the list of arguments
+[12-object.js](./12-object.js) | JS script to replace the value 12 with 89
+[13-add.js](./13-add.js) | JS function that returns the addition of 2 integers
+[100-let_me_const.js](./100-let_me_const.js) | JS file that modifies the value of myVar (in another file) to 333
+[101-call_me_moby.js](./101-call_me_moby.js) | JS function that executes x times a function
+[102-add_me_maybe.js](./102-add_me_maybe.js) | JS function that increments and calls a function
+[103-object_fct.js](./103-object_fct.js) | JS script that adds a new function incr that increments the integer value of the object myObject
 
-* **14. Const or not const**
-  * [100-let_me_const.js](./100-let_me_const.js): JavaScript script that modifies
-  the value of `myVar` in the following file to `333`.
-```
-#!/usr/bin/node
-myVar = 89;
-require('./100-let_me_const')
-console.log(myVar);
-```
+## Autor
 
-* **15. Call me Moby**
-  * [101-call_me_moby.js](./101-call_me_moby.js): JavaScript function that executes
-  `x` times a given function.
+```Success Chikezie```
 
-* **16. Add me maybe**
-  * [102-add_me_maybe.js](./102-add_me_maybe.js): JavaScript function that
-  increments a given number and calls a given function.
+### Connect me!
 
-* **17. Increment object**
-  * [103-object_fct.js](./103-object_fct.js): Update of the following JavaScript
-  script adding a new function `incr` that increments the number `value`.
+<br>
+<div>
+
+<a  href="https://twitter.com/succynice"  target="_blank">  <img  align="left"  alt="Success Chikezie | Twitter"  src="https://img.shields.io/twitter/follow/succynice?style=social"/>  </a>
+
+<a  href="https://www.linkedin.com/in/succynice/"  target="_blank">  <img  align="left"  alt="Success Chikezie | LinkedIn"  src="https://img.shields.io/badge/LinkedIn-+24K-blue?style=social&logo=linkedin"/>  </a>
+
+<a  href="https://github.com/succynice/"  target="_blank">  <img  align="left"  src="https://img.shields.io/github/followers/succynice?style=social"  alt="Ralex | Github">  </a>
+</br>
+</div>

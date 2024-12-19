@@ -1,43 +1,27 @@
-# 0x0E. SQL - More queries
-![bc2575fee3303b731031](https://github.com/Zed-bard/alx-higher_level_programming/assets/132649828/e139af12-4e6e-4c80-9e5f-4951aefb9d1f)
-The project involves setting up and working with MySQL 8.0 on Ubuntu 20.04 LTS. It includes creating SQL scripts adhering to specific requirements such as commenting syntax, starting files with task descriptions, and using uppercase SQL keywords. The README.md file provides comprehensive instructions for installation, connection to the MySQL server, and importing SQL dumps. Additionally, it includes an example SQL script for reference. This project aims to facilitate database management and query execution within a specified environment.
+# SQL - MORE QUERIES.
 
+## Table of contents
 
-## Requirements
-
-### General
-- Allowed editors: vi, vim, emacs
-- All your files will be executed on Ubuntu 20.04 LTS using MySQL 8.0 (version 8.0.25)
-- All your files should end with a new line
-- All your SQL queries should have a comment just before (i.e. syntax above)
-- All your files should start with a comment describing the task
-- All SQL keywords should be in uppercase (SELECT, WHERE…)
-
-### README.md
-- A README.md file, at the root of the folder of the project, is mandatory
-
-## Setup Instructions
-
-### Install MySQL 8.0 on Ubuntu 20.04 LTS
-```bash
-$ sudo apt update
-$ sudo apt install mysql-server
-$ mysql --version
-```
-
-### Connect to your MySQL server:
-$ sudo mysql
-
-### Use "container-on-demand" to run MySQL
-- In the container, credentials are root/root
-- Ask for container Ubuntu 20.04
-- Connect via SSH or connect via the Web terminal
-- In the container, start MySQL before playing with it:
-
-$ service mysql start
-
-### How to import a SQL dump
-$ echo "CREATE DATABASE hbtn_0d_tvshows;" | mysql -uroot -p
-$ curl "https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/274/hbtn_0d_tvshows.sql" -s | mysql -uroot -p hbtn_0d_tvshows
-$ echo "SELECT * FROM tv_genres" | mysql -uroot -p hbtn_0d_tvshows
-
+Files | Description
+----- | -----------
+[0-privileges.sql](./0-privileges.sql) | sql script that lists all privileges of the MySQL users user_0d_1 and user_0d_2 on your server
+[1-create_user.sql](./1-create_user.sql) | sql script that creates the MySQL server user user_0d_1
+[2-create_read_user.sql](./2-create_read_user.sql) | sql script that creates the database hbtn_0d_2 and the user user_0d_2
+[3-force_name.sql](./3-force_name.sql) | sql script that creates the table force_name on your MySQL server
+[4-never_empty.sql](./4-never_empty.sql) | sql script that creates the table id_not_null on your MySQL server
+[5-unique_id.sql](./5-unique_id.sql) | sql script that creates the table unique_id on your MySQL server
+[6-states.sql](./6-states.sql) | sql script that creates the database hbtn_0d_usa and the table states (in the database hbtn_0d_usa) on your MySQL server
+[7-cities.sql](./7-cities.sql) | sql script that creates the database hbtn_0d_usa and the table cities (in the database hbtn_0d_usa) on your MySQL server
+[8-cities_of_california_subquery.sql](./8-cities_of_california_subquery.sql) | sql script that lists all the cities of California that can be found in the database hbtn_0d_usa
+[9-cities_by_state_join.sql](./9-cities_by_state_join.sql) | sql script that lists all cities contained in the database hbtn_0d_usa
+[10-genre_id_by_show.sql](./10-genre_id_by_show.sql) | sql script that lists all shows contained in hbtn_0d_tvshows that have at least one genre linked
+[11-genre_id_all_shows.sql](./11-genre_id_all_shows.sql) | sql script that lists all shows contained in the database hbtn_0d_tvshows
+[12-no_genre.sql](./12-no_genre.sql) | sql script that lists all shows contained in hbtn_0d_tvshows without a genre linked
+[13-count_shows_by_genre.sql](./13-count_shows_by_genre.sql) | sql script that lists all genres from hbtn_0d_tvshows and displays the number of shows linked to each
+[14-my_genres.sql](./14-my_genres.sql) | sql script that uses the hbtn_0d_tvshows database to lists all genres of the show Dexter
+[15-comedy_only.sql](./15-comedy_only.sql) | sql script that lists all Comedy shows in the database hbtn_0d_tvshows
+[16-shows_by_genre.sql](./16-shows_by_genre.sql) | sql script that lists all shows, and all genres linked to that show, from the database hbtn_0d_tvshows
+[100-not_my_genres.sql](./100-not_my_genres.sql) | sql script that uses the hbtn_0d_tvshows database to list all genres not linked to the show Dexter
+[101-not_a_comedy.sql](./101-not_a_comedy.sql) | sql script that lists all shows without the genre Comedy in the database hbtn_0d_tvshows
+[102-rating_shows.sql](./102-rating_shows.sql) | sql script that lists all shows from hbtn_0d_tvshows_rate by their rating
+[103-rating_genres.sql](./103-rating_genres.sql) | sql script that lists all genres in the database hbtn_0d_tvshows_rate by their rating

@@ -1,51 +1,93 @@
-# Project: Python IO Toolkit
+# Python - Input/Output
 
-## Overview
+roject done during Full Stack Software Engineering studies at ALX AFRICA SE School.In this project, I practiced file handling in Python.  I used the builtin `with`, `open`, and `read` functions with the `json` module to read and write files and serialize and deserialize objects with JSON.
 
-This project aims to create a versatile Python toolkit for handling input/output operations, adhering to specific requirements and best practices. The toolkit includes various scripts that provide solutions for common file operations, configuration parsing, task management, data analysis, database interaction, document conversion, log file analysis, and unit testing.
+*****
 
-## Requirements
+## Tests :heavy_check_mark:
 
-### Python Scripts
-- **Editors:** Allowed editors are vi, vim, and emacs.
-- **Interpreter:** All scripts will be interpreted/compiled on Ubuntu 20.04 LTS using Python 3.8.5.
-- **File Endings:** All files should end with a new line.
-- **Shebang Line:** The first line of all scripts should be exactly `#!/usr/bin/python3`.
-- **README.md:** A README.md file, at the root of the project folder, is mandatory.
-- **Coding Style:** Code should follow the `pycodestyle` (version 2.8.*) guidelines.
-- **Executable Files:** All scripts must be executable.
-- **File Length:** The length of the files will be tested using `wc`.
+* [tests](./tests): This directory contains all my test files for this project:
 
-### Python Test Cases
-- **Editors:** Allowed editors are vi, vim, and emacs.
-- **File Endings:** All files should end with a new line.
-- **Test Folder:** All test files should be inside a folder named `tests`.
-- **Test File Format:** All test files should be text files with the extension `.txt`.
-- **Test Execution:** All tests should be executed using the command `python3 -m doctest ./tests/*`.
-- **Documentation for Modules, Classes, and Functions:** Each module, class, and function should have proper documentation, accessible using commands like `python3 -c 'print(__import__("my_module").__doc__)'`, `python3 -c 'print(__import__("my_module").MyClass.__doc__)'`, and `python3 -c 'print(__import__("my_module").my_function.__doc__)'`.
+### Table of contents
 
-## Project Ideas and Descriptions
+| File        | Prototype               |
+| ------------| ----------------------- |
+| [0-read_file.py](./0-read_file.py) | a function that reads a text file (UTF8) and prints it to stdout: | `def read_file(filename=""):` |
+| [1-number_of_lines.py](./1-write_file.py) | a function that writes a string to a text file (UTF8) and returns the number of characters written: | `def number_of_lines(filename=""):` |
+| [2-read_lines.py](./2-append_write.py) | a function that appends a string at the end of a text file (UTF8) and returns the number of characters added: | `def read_lines(filename="", nb_lines=0):` |
+| [3-to_json_string.py](./3-to_json_string.py) | a function that returns the JSON representation of an object (string): | `def to_json_string(my_obj):` |
+| [4-from_json_string.py](./4-from_json_string.py) | a function that returns an object (Python data structure) represented by a JSON string: | `def from_json_string(my_str):` |
+| [5-save_to_json_file.py](./5-save_to_json_file.py) | a function that writes an Object to a text file, using a JSON representation: | `def save_to_json_file(my_obj, filename):` |
+| [6-load_from_json_file.py](./6-load_from_json_file.py) | a function that creates an Object from a “JSON file”: | `def load_from_json_file(filename):` |
+| [7-add_item.py](./7-add_item.py) | a script that adds all arguments to a Python list, and then save them to a file: | 
+| [8-class_to_json.py](./8-class_to_json.py) | a function that returns the dictionary description with simple data structure (list, dictionary, string, integer and boolean) for JSON serialization of an object: | `def class_to_json(obj):` | 
+| [9-student.py](./9-student.py) | a class Student that defines a student by: |
+| [10-student.py](./10-student.py) | a class Student that defines a student by: (based on 9-student.py) | 
+| [11-student.py](11-student.py) | a class Student that defines a student by: (based on 10-student.py) | 
+|[12-pascal_triangle.py](./12-pascal_triangle.py) | a function def pascal_triangle(n): that returns a list of lists of integers representing the Pascal’s triangle of n: | `def pascal_triangle(n):` |
+| [100-append_after.py](./100-append_after.py) | a function that inserts a line of text to a file, after each line containing a specific string (see example): | `def append_after(filename="", search_string="", new_string=""):` |
+| [101-stats.py](101-stats.py) | a script that reads stdin line by line and computes metrics: | 
 
-1. **File Operations Tool:**
-   - **Description:** Create a Python script that performs various file operations such as copying, moving, renaming, and deleting files. Ensure that the script handles different file types and provides clear documentation for each function.
+## Tasks :page_with_curl:
 
-2. **Config File Parser:**
-   - **Description:** Build a utility script that reads and parses configuration files in a custom format. It should be able to extract key-value pairs, handle comments, and provide a way to update and save changes to the configuration.
+* **0. Read file**
+  * [0-read_file.py](./0-read_file.py): Python function that prints the contents of a UTF8 text file to standard output.
 
-3. **Interactive Task List Manager:**
-   - **Description:** Develop a command-line task manager that allows users to interactively add, delete, and mark tasks as completed. Store tasks in a file, and implement features such as priority levels, due dates, and categorization.
+* **1. Write to a file**
+  * [1-write_file.py](./1-write_file.py): Python function that writes a string to a UTF8 text file and returns the number of characters written.
 
-4. **CSV Data Analysis Tool:**
-   - **Description:** Create a script that reads data from CSV files and performs basic analysis, such as calculating averages, sums, and generating summary reports. Ensure that the script is modular and can be easily extended for different data sets.
+* **2. Append to a file**
+  * [2-append_write.py](./2-append_write.py): Python function that appends a string to the end of a UTF8 text file and returns the number of characters appended.
 
-5. **Simple Database Interface:**
-   - **Description:** Build a Python script that interacts with a simple database (e.g., SQLite). Implement basic CRUD operations (Create, Read, Update, Delete) and ensure that the script provides clear error handling and documentation.
+* **3. To JSON string**
+  * [3-to_json_string.py](./3-to_json_string.py): Python function that returns the JSON string representation of an object.
 
-6. **Markdown to HTML Converter:**
-   - **Description:** Develop a script that converts Markdown files to HTML. Pay attention to formatting, headings, lists, and links. Include options for custom styling and ensure the generated HTML is well-formed.
+* **4. From JSON string to Object**
+  * [4-from_json_string.py](./4-from_json_string.py): Python function that returns the Python object represented by a JSON string.
 
-7. **Log File Analyzer:**
-   - **Description:** Create a tool that analyzes log files, extracts relevant information, and generates reports. Implement functionalities such as filtering by date, severity, or specific keywords. The tool should be able to handle logs in various formats.
+* **5. Save Object to a file**
+  * [5-save_to_json_file.py](./5-save_to_json_file.py): Python function that writes an object to a text file using JSON representation.
 
-8. **Unit Testing Framework:**
-   - **Description:** Develop a simple unit testing framework that allows users to write and run tests for their Python scripts. Include features such as test discovery, fixtures, and assertions. The framework should generate clear and informative test reports.
+* **6. Create object from a JSON file**
+  * [6-load_from_json_file.py](./6-load_from_json_file.py): Python function that creates an object from a `.json` file.
+
+* **7. Load, add, save**
+  * [7-add_item.py](./7-add_item.py): Python script that stores all command line arguments to a Python list saved in the file `add_item.json`.
+
+* **8. Class to JSON**
+  * [8-class_to_json.py](./8-class_to_json.py): Python function that returns the dictionary description for simple Python data structures (lists, dictionaries, strings, integers and booleans).
+
+* **9. Student to JSON**
+  * [9-student.py](./9-student.py): Python class `Student` that defines a student. Includes:
+    * Public instance attributes `first_name`, `last_name`, and `age`.
+    * Instantiation with `first_name`, `last_name`, and `age`: `def __init__(self, first_name, last_name, age):`.
+    * Public method `def to_json(self):` that returns the dictionary representation of a `Student` instance.
+
+* **10. Student to JSON with filter**
+  * [10-student.py](./10-student.py): Python class `Student` that defines a student. Builds on [11-student.py](./11-student.py) with:
+    * Public method `def to_json(self, attrs=None):` that returns the dictionary representation of a `Student` instance.
+    * If `attrs` is a list of strings, only the attributes listed are represented in the dictionary.
+
+* **11. Student to disk and reload**
+  * [11-student.py](./11-student.py): Python class `Student` that defines a student. Builds on [12-student.py](./12-student.py) with:
+    * Public method `def reload_from_json(self, json):` that replaces all attributes of the `Student` instance using the key/value pairs listed in `json`.
+    * The method assumes `json` is a dictionary containing attributes with name/value corresponding to key/value.
+
+* **12. Pascal's Triangle**
+  * [12-pascal_triangle.py](./12-pascal_triangle.py): Python function that returns a list of lists of integers representing Pascal's triangle of size `n`.
+  * Assumes the size parameter `n` is an integer.
+  * If `n` is less than or equal to `0`, returns an empty list.
+
+* **13. Search and update**
+  * [100-append_after.py](./100-append_after.py): Python function that inserts a line of text to a file after each line containing a specified string.
+
+* **14. Log parsing**
+  * [101-stats.py](./101-stats.py): Python script that reads lines from standard input. After every 10 lines or the input of a keyboard interruption (`CTRL + C`), computes the following metrics:
+    * Total file size up that point: `File size: <total size>`
+    * Status code of each read line, printed in ascending order:  `<status code>: <number>`
+  * Input format: `<IP Address> - [<date>] "GET /projects/260 HTTP/1.1"
+  <status code> <file size>`
+
+*****
+
+

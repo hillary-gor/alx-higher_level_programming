@@ -10,4 +10,3 @@ LEFT JOIN tv_shows ON tv_show_genres.show_id = tv_shows.id
 WHERE tv_shows.title = 'Dexter')
 GROUP BY name
 ORDER BY name ASC;
-

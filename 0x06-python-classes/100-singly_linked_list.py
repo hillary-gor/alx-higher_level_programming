@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """Define classes for a singly-linked list."""
 
 
@@ -17,7 +18,7 @@ class Node:
     @property
     def data(self):
         """Get/set the data of the Node."""
-        return self.__data
+        return (self.__data)
 
     @data.setter
     def data(self, value):
@@ -28,7 +29,7 @@ class Node:
     @property
     def next_node(self):
         """Get/set the next_node of the Node."""
-        return self.__next_node
+        return (self.__next_node)
 
     @next_node.setter
     def next_node(self, value):
@@ -41,7 +42,7 @@ class SinglyLinkedList:
     """Represent a singly-linked list."""
 
     def __init__(self):
-        """Initialize a new SinglyLinkedList."""
+        """Initalize a new SinglyLinkedList."""
         self.__head = None
 
     def sorted_insert(self, value):
@@ -49,7 +50,7 @@ class SinglyLinkedList:
         The node is inserted into the list at the correct
         ordered numerical position.
         Args:
-            value (int): The new Node to insert.
+            value (Node): The new Node to insert.
         """
         new = Node(value)
         if self.__head is None:
@@ -59,18 +60,18 @@ class SinglyLinkedList:
             new.next_node = self.__head
             self.__head = new
         else:
-            current = self.__head
-            while (current.next_node is not None and
-                   current.next_node.data < value):
-                current = current.next_node
-            new.next_node = current.next_node
-            current.next_node = new
+            tmp = self.__head
+            while (tmp.next_node is not None and
+                    tmp.next_node.data < value):
+                tmp = tmp.next_node
+            new.next_node = tmp.next_node
+            tmp.next_node = new
 
     def __str__(self):
         """Define the print() representation of a SinglyLinkedList."""
         values = []
-        current = self.__head
-        while current is not None:
-            values.append(str(current.data))
-            current = current.next_node
-        return '\n'.join(values)
+        tmp = self.__head
+        while tmp is not None:
+            values.append(str(tmp.data))
+            tmp = tmp.next_node
+        return ('\n'.join(values))

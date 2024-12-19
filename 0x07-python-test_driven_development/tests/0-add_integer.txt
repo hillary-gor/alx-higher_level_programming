@@ -1,51 +1,76 @@
-======================
-0-add_integer
-======================
+===========================
+How to Use 0-add_integer.py
+===========================
 
-Add integer module is the unit test for the add_integer function
+This module defines an integer addition function ``add_integer(a, b=98)``.
 
-=====================
+Usage
+=====
 
-::
-
-	>>> add_integer = __import__('0-add_integer').add_integer
-	>>> add_integer(1, 2)
-	3
+``add_integer(...)``` returns the addition of its two arguments. For numbers,
+that value is equivalent to using the ``+`` operator.
 
 ::
 
-	>>> add_integer(3, -2)
-	1
-
-It also works with float numbers
-
-::
-
-	>>> add_integer(98.5, 30.2)
-	128
-
-It also works with 2 float negative numbers
+    >>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integer(2, 3)
+    5
 
 ::
 
-    >>> add_integer(-5.9, -0.7)
-    -5
+    >>> add_integer(2, -3)
+    -1
 
-It also works with one integer number and one float number.
+The function also works with floating-point values.
 
 ::
 
-    >>> add_integer(5.5, -2)
-    3
+    >>> add_integer(2.0, 3.0)
+    5
 
-It also works with one argument. 2nd arg is default as 98
+Note that floats are casted to ints before addition is performed.
+
+::
+
+    >>> add_integer(2.9, 0.2)
+    2
+
+::
+
+    >>> add_integer(-2.9, -0.2)
+    -2
+
+Floating and non-floating point values can be combined.
+
+::
+
+    >>> add_integer(2.3, -3)
+    -1
+
+The second argument is optional - by default, it is 98.
 
 ::
 
     >>> add_integer(2)
     100
 
-TypeError message of None arguments declared
+Non-Numbers
+===========
+
+``add_integer()`` expects that both arguments are either integers or floats.
+If either argument is a non-integer and non-float, a TypeError is raised:
+
+::
+
+    >>> add_integer("hello", 3)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+::
+
+    >>> add_integer(2, "hello")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
 
 ::
 
@@ -53,69 +78,46 @@ TypeError message of None arguments declared
     Traceback (most recent call last):
     TypeError: a must be an integer
 
-TypeError message of second argument non declared
-
 ::
 
-    >>> add_integer(5, None)
+    >>> add_integer(2.3, None)
     Traceback (most recent call last):
     TypeError: b must be an integer
 
-TypeError a is not a integer
+If both arguments are non-integers and non-floats, a TypeError message is only
+printed for the first argument.
 
 ::
 
-    >>> add_integer("text", 3)
+    >>> add_integer("hello", "there")
     Traceback (most recent call last):
     TypeError: a must be an integer
 
-TypeError b is not a integer
+The function will fail if infinity is provided.
 
 ::
 
-    >>> add_integer(3, "text")
+    >>> add_integer(float('inf'))
     Traceback (most recent call last):
-    TypeError: b must be an integer
-
-NameError a is not a integer is not string
-
-::
-
-    >>> add_integer(text, 3)
-    Traceback (most recent call last):
-    NameError: name 'text' is not defined
-
-NameError a and b are not integers nor string
+    OverflowError: cannot convert float infinity to integer
+     
 
 ::
 
-    >>> add_integer(text1, text2)
-    Traceback (most recent call last):
-    NameError: name 'text1' is not defined
-
-TypeError a and b are not integers
-
-::
-
-    >>> add_integer("text1", "text2")
-    Traceback (most recent call last):
-    TypeError: a must be an integer
-
-OverflowError causing infinity flow when a is int and b is inf
-
-::
-
-    >>> add_integer(4, float('inf'))
+    >>> add_integer(2, float('inf'))
     Traceback (most recent call last):
     OverflowError: cannot convert float infinity to integer
 
-ValueError for Non assigned Number NaN
+And again with NaN numbers.
 
 ::
 
-    >>> add_integer(float('NaN'))
+    >>> add_integer(float('nan'))
     Traceback (most recent call last):
     ValueError: cannot convert float NaN to integer
 
 ::
 
+    >>> add_integer(2, float('nan'))
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer

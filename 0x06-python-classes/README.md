@@ -1,59 +1,95 @@
-# 0x06. Python - Classes and Objects
+# Python - Classes and Objects
 
-## Background Context
+![alt text](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/247/oop-meme.jpg)
 
-Object-Oriented Programming (OOP) is a fundamental concept in Python that introduces a new way of thinking about and organizing code. Whether you are new to OOP or already familiar with it, this project aims to solidify your understanding through practical examples and experimentation.
+In this project, I began practicing object-oriented programming using classes and objects in Python. I learned about attributes, methods, and properties as well as data abstraction, data encapsulation, and information hiding.
 
-Make sure to read and understand all the provided materials. Avoid copying and pasting code; instead, type it out, test it, and play around with OOP concepts. The primary goal is to gain hands-on experience and develop a deep understanding of how classes and objects work.
+*****
 
-## Requirements
+## Tests :heavy_check_mark:
 
-### General
+* [tests](./tests): This directory contains all my test files for this project.
 
-- Allowed editors: vi, vim, emacs
-- All files interpreted/compiled on Ubuntu 20.04 LTS using Python 3.8.5
-- Files should end with a new line
-- The first line of all files should be `#!/usr/bin/python3`
-- Include a `README.md` file at the root of the project folder
-- Code should follow PEP 8 style guidelines (use pycodestyle version 2.8.*)
-- All files must be executable
-- File length will be tested using `wc`
-- All modules, classes, and functions should have documentation
-- Documentation should provide meaningful explanations and adhere to length requirements
+*****
 
-### Before Starting the Project
+## Table of Contents
 
-Ensure you have a solid understanding of the following topics:
+Files | Description | Prototype
+----- | ----------- | ---------
+[0-square.py](./0-square.py) | Python class Square that defines a square
+[1-square.py](./1-square.py) | Python class Square that defines a square based on the previous one
+[2-square.py](./2-square.py) | Python class Square that defines a square based on the previous one
+[3-square.py](./3-square.py) | Python class Square that defines a square based on the previous one
+[4-square.py](./4-square.py) | Python class Square that defines a square based on the previous one
+[5-square.py](./5-square.py) | Python class Square that defines a square based on the previous one
+[6-square.py](./6-square.py) | Python class Square that defines a square based on the previous one
+[100-singly_linked_list.py](./100-singly_linked_list.py) | Python class Node that defines a node of a singly linked list
+[101-square.py](./101-square.py) | Python class Square that defines a square based on 6-square.py
+[102-square.py](./102-square.py) | Python class Square that defines a square based on 4-square.py
+[103-magic_class.py](./103-magic_class.py) | Python class MagicClass that does exactly the same as a given ByteCode
 
-- Why Python programming is awesome
-- What is OOP
-- "First-class everything"
-- What is a class
-- What is an object and an instance
-- Difference between a class and an object or instance
-- What is an attribute
-- Usage of public, protected, and private attributes
-- The role of `self`
-- What is a method
-- Special `__init__` method and its usage
-- Concepts of Data Abstraction, Data Encapsulation, and Information Hiding
-- Definition and usage of a property
-- Distinction between an attribute and a property in Python
-- Pythonic way of writing getters and setters
-- Dynamically creating new attributes for existing instances
-- Binding attributes to objects and classes
-- Understanding the `__dict__` of a class and/or instance
-- How Python finds attributes of an object or class
-- Application of the `getattr` function
+## Tasks :page_with_curl:
 
-## Experimentation and Learning
+* **0. My first square**
+  * [0-square.py](./0-square.py): Python class `Square` that defines a square.
 
-The most crucial takeaway from this project is to experiment with OOP. Actively play with the concepts, run examples, and deepen your understanding. The more hands-on experience you gain, the better your grasp of Python's OOP features.
+* **1. Square with size**
+  * [1-square.py](./1-square.py): Python class `Square` that defines a square. Builds on  [0-square.py](./0-square.py) with:
+    * Private instance attribute `size`.
+    * Instantiation with `size`.
 
-## Author
+* **2. Size validation**
+  * [2-square.py](./2-square.py): Python class `Square` that defines a square. Builds on [1-square.py](./1-square.py) with:
+    * Instantiation with optional `size`: `def __init__(self, size=0):`
+  * If a provided `size` attribute is not an integer, a `TypeError` exception is raised with the message `must be an integer`.
+  * If a provided `size` attribute is less than `0`, a `ValueError` exception is raised with the message `size must be >= 0`.
 
-[Zerihun Shiferaw]
+* **3. Area of a square**
+  * [3-square.py](./3-square.py): Python class `Square` that defines a square. Builds on [2-square.py](./2-square.py) with:
+    * Public instance attribute `def area(self):` that returns the current square area.
 
-## Acknowledgments
+* **4. Access and update private attribute**
+  * [4-square.py](./4-square.py): Python class `Square` that defines a square. Builds on [3-square.py](./3-square.py) with:
+    * Property `def size(self):` to retrieve the private instance  attribute `self`.
+    * Property setter `def size(self, value):` to set `self`.
 
-Special thanks to the [Alx-SE](https://www.alxafrica.com/) curriculum team for providing valuable learning materials.
+* **5. Printing a square**
+  * [5-square.py](./5-square.py): Python class `Square` that defines a square. Builds on [4-square.py](./4-square.py) with:
+    * Public instance method `def my_print(self):` that prints the square with the character `#` to standard output (if `size` == 0 -> prints an empty line).
+
+* **6. Coordinates of a square**
+  * [6-square.py](./6-square.py): Python class `Square` that defines a square. Builds on [5-square.py](./5-square.py) with:
+    * Private instance attribute `position`.
+    * Property `def position(self):` to retreive `position`.
+    * Property setter `def position(self, value):` to set `position`.
+    * Instantiation with optional `size` and `position`:  `def __init__(self, size=0, position=(0, 0)):`
+  * If a provided `position` attribute is not a tuple of two integers, a `TypeError` exception is raised with the message `position must be a tuple of 2 positive integers`.
+
+* **7. Singly linked list**
+  * [100-singly_linked_list.py](./100-singly_linked_list.py): Python classes `Node` and `SinglyLinkedList` that define a node of a singly-linked list and a singly-linked list. The class `Node` is defined with:
+    * Private instance attribute `data`.
+    * Property `def data(self):` to set `data`.
+    * Property setter `def data(self, value):` to set `data`.
+    * Private instance attribute `next_node`.
+    * Property `def next_node(self):` to set `next_node`.
+    * Property `def next_node(self, value):` to set `next_node`.
+    * Instantiation with `data` and `next_node`:  `def __init__(self, data, next_node=None):`
+  * If a provided `data` attribute is not an integer, a `TypeError` exception is raised with the message `data must be an integer`.
+  * If a provided `next_node` attribute is not a `Node` or `None`, a `TypeError` exception is raised with the message `next_node must be a Node object`.
+  * The class `SinglyLinkedList` is defined with:
+    * Private instance attribute `head`.
+    * Instantiation `def __init__(self):`
+    * Public instance method `def sorted_insert(self, value):` that inserts a new `Node` into the correct sorted position in the list increasing order).
+
+* **8. Print Square instance**
+  * [101-square.py](./101-square.py): Python class `Square` that defines a square. Builds on [6-square.py](./6-square.py) with:
+    * Method `__str__` to set printing of a `Square` instance equivalent to  `my_print()`.
+
+* **9. Compare 2 squares**
+  * [102-square.py](./102-square.py): Python class `Square` that defines a square. Builds on [101-square.py](./101-square.py) with:
+    * Methods `__eq__`, `__ne__`, `__lt__`, `__le__`, `__gt__`, and `__ge__`, to enable usage of `Square` instances with logical operators `==`, `!=`, `<`, `<=`, `>`, and `>=`, respectively, based on the square area.
+
+* **10. ByteCode -> Python #5**
+  * [103-magic_class.py](./103-magic_class.py): Python function matching exactly a bytecode provided.
+
+*****
