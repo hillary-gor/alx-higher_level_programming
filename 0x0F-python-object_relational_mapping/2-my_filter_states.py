@@ -1,29 +1,28 @@
 #!/usr/bin/python3
-""" Select states with names matching arguments """
+"""
+This script takes in an argument and
+displays all values in the states
+where `name` matches the argument
+from the database `hbtn_0e_0_usa`.
+"""
 
+import MySQLdb
+from sys import argv
 
 if __name__ == '__main__':
+    """
+    Access to the database and get the states
+    from the database.
+    """
 
-    from sys import argv
-    import MySQLdb
+    db = MySQLdb.connect(host="localhost", user=argv[1], port=3306,
+                         passwd=argv[2], db=argv[3])
 
-    db_user = argv[1]
-    db_passwd = argv[2]
-    db_name = argv[3]
-    search = argv[4]
+    cur = db.cursor()
+    cur.execute("SELECT * FROM states \
+                 WHERE name LIKE BINARY '{}' \
+                 ORDER BY states.id ASC".format(argv[4]))
+    rows = cur.fetchall()
 
-    database = MySQLdb.connect(host='localhost',
-                               port=3306,
-                               user=db_user,
-                               passwd=db_passwd,
-                               db=db_name)
-
-    cursor = database.cursor()
-
-    cursor.execute('SELECT id, name FROM states\
-                   WHERE states.name = \'{}\'\
-                   ORDER BY states.id ASC'.format(search))
-
-    for row in cursor.fetchall():
-        if row[1] == search:
-            print(row)
+    for row in rows:
+        print(row)
